@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,12 +25,10 @@ public class Main {
                 "Nvm. Turns out reindeer do exist. I always thought they were made up by the author of Rudolph the...",
                 "https://www.blogger.com/oops.html");
 
-        bp.printOut();
-        System.out.println();
-        l.printOut();
-        System.out.println();
-        t.printOut();
-        System.out.println();
-        bp2.printOut();
+        List<NewsFeedItem> items = Arrays.asList(bp, l, t, bp2);
+        for (NewsFeedItem item : items) {
+            item.printOut();
+            System.out.println();
+        }
     }
 }

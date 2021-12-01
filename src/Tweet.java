@@ -1,15 +1,13 @@
 import java.util.Date;
 
-public class Tweet {
-    public String authorName;
-    public String authorEmail;
+public class Tweet implements NewsFeedItem {
+    private Author author;
     public Date date;
     public String url;
     public String content;
 
     public Tweet(String authorName, String authorEmail, Date date, String url, String content) {
-        this.authorName = authorName;
-        this.authorEmail = authorEmail;
+        this.author = new Author(authorName, authorEmail);
         this.date = date;
         this.url = url;
         this.content = content;
@@ -17,7 +15,7 @@ public class Tweet {
 
     public void printOut() {
         System.out.println(content);
-        System.out.printf("by %s, <%s>\n", authorName, authorEmail);
+        author.printOut();
         System.out.println(date);
         System.out.println("===================================================");
         System.out.println("Click here: " + url);

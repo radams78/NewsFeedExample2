@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Link {
+public class Link implements NewsFeedItem {
     private String title;
     private Date date;
     private String url;

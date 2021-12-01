@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class AbbreviatedBlogPost {
+public class AbbreviatedBlogPost implements NewsFeedItem {
     private String title;
     private String authorName;
     private String authorEmail;

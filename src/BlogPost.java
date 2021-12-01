@@ -1,16 +1,14 @@
 import java.util.Date;
 
-public class BlogPost {
+public class BlogPost implements NewsFeedItem {
     private String title;
-    private String authorName;
-    private String authorEmail;
+    private Author author;
     private Date date;
     private String content;
 
     public BlogPost(String title, String authorName, String authorEmail, Date date, String content) {
         this.title = title;
-        this.authorName = authorName;
-        this.authorEmail = authorEmail;
+        this.author = new Author(authorName, authorEmail);
         this.date = date;
         this.content = content;
     }
@@ -18,7 +16,7 @@ public class BlogPost {
     public void printOut() {
         System.out.println(title);
         System.out.println();
-        System.out.printf("by %s, <%s>\n", authorName, authorEmail);
+        author.printOut();
         System.out.println(date);
         System.out.println("===================================================");
         System.out.println(content);
